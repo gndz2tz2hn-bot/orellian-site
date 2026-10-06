@@ -1,0 +1,484 @@
+<!doctype html>
+<html lang="tr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Orellian Technology</title>
+<meta name="description" content="Orellian Yazılım ve Bilgi Teknolojileri: yazılım geliştirme, SaaS ürünleri, e-ticaret, tarım teknolojileri, tedarik zinciri desteği ve BT donanım tedariği. KOSGEB, TÜBİTAK ve Sanayi ve Teknoloji Bakanlığı destekli Ar-Ge.">
+<meta property="og:title" content="Orellian Technology · Simple, Intelligent, Accessible">
+<meta property="og:description" content="Yazılım, SaaS, e-ticaret ve tarım teknolojilerinde Ar-Ge odaklı teknoloji şirketi.">
+<meta property="og:url" content="https://www.orellian.com">
+<meta name="theme-color" content="#221c50">
+<link rel="canonical" href="https://www.orellian.com">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0' y1='1' x2='1' y2='0'%3E%3Cstop offset='0' stop-color='%2300c8f8'/%3E%3Cstop offset='.4' stop-color='%230560fa'/%3E%3Cstop offset='.7' stop-color='%237b4dff'/%3E%3Cstop offset='1' stop-color='%23d40cf5'/%3E%3C/linearGradient%3E%3C/defs%3E%3Cpath fill='url(%23g)' fill-rule='evenodd' d='M50 4 89.8 27v46L50 96 10.2 73V27Z M50 26 29.2 38v24L50 74l20.8-12V38Z'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Lexend:wght@500;600&family=Delius&family=JetBrains+Mono:wght@500&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#f7f7fc; --bg2:#ffffff; --ink:#221c50; --muted:#5d5a7a; --line:#e6e4f2;
+  --brand:#5b4dff; --brand2:#00c8f8; --accent:#d40cf5; --deep:#1a1540; --deepink:#ecebfa;
+  --card:#ffffff; --shadow:0 1px 2px rgba(34,28,80,.04),0 8px 24px rgba(34,28,80,.07);
+  --grad:linear-gradient(120deg,#00c8f8 0%,#0560fa 35%,#7b4dff 70%,#d40cf5 100%);
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --bg:#0f0c24; --bg2:#151131; --ink:#ecebfa; --muted:#a3a0c2; --line:#2a2550;
+    --brand:#8f84ff; --brand2:#38d6ff; --accent:#e45cff; --deep:#0a0819; --deepink:#ecebfa;
+    --card:#1a1640; --shadow:0 1px 2px rgba(0,0,0,.3),0 8px 24px rgba(0,0,0,.3);
+  }
+}
+:root[data-theme="dark"]{
+  --bg:#0f0c24; --bg2:#151131; --ink:#ecebfa; --muted:#a3a0c2; --line:#2a2550;
+  --brand:#8f84ff; --brand2:#38d6ff; --accent:#e45cff; --deep:#0a0819; --deepink:#ecebfa;
+  --card:#1a1640; --shadow:0 1px 2px rgba(0,0,0,.3),0 8px 24px rgba(0,0,0,.3);
+}
+.wm{font-family:Lexend,Manrope,sans-serif;font-weight:600;letter-spacing:-.01em}
+.slogan{font-family:Delius,cursive;letter-spacing:.12em}
+.gtext{background:var(--grad);-webkit-background-clip:text;background-clip:text;color:transparent}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:Manrope,system-ui,sans-serif;background:var(--bg);color:var(--ink);line-height:1.6;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+a{color:inherit;text-decoration:none}
+.wrap{max-width:1160px;margin:0 auto;padding:0 16px}
+@media(min-width:720px){.wrap{padding:0 32px}}
+.mono{font-family:"JetBrains Mono",monospace;font-size:.78rem;letter-spacing:.08em;text-transform:uppercase;color:var(--brand)}
+
+/* nav */
+header{position:sticky;top:0;z-index:50;background:color-mix(in srgb,var(--bg) 85%,transparent);backdrop-filter:blur(12px);border-bottom:1px solid var(--line)}
+.nav{display:flex;align-items:center;justify-content:space-between;height:68px}
+.logo{display:flex;align-items:center;gap:10px;font-size:1.35rem}
+.logo svg{width:36px;height:36px}
+.logo .sub{display:block;font-family:Delius,cursive;font-size:.7rem;letter-spacing:.2em;color:var(--muted);line-height:1;margin-top:2px}
+.logo .wm{line-height:1}
+.links{display:none;gap:28px;font-weight:600;font-size:.94rem;color:var(--muted)}
+.links a:hover{color:var(--ink)}
+@media(min-width:900px){.links{display:flex}}
+.btn{display:inline-flex;align-items:center;gap:8px;padding:12px 20px;border-radius:999px;font-weight:700;font-size:.94rem;transition:transform .15s,box-shadow .15s}
+.btn:hover{transform:translateY(-1px)}
+.btn-primary{background:var(--grad);color:#fff;box-shadow:0 6px 18px rgba(91,77,255,.28)}
+.btn-ghost{border:1px solid var(--line);background:var(--bg2)}
+.nav .btn{padding:9px 16px;font-size:.88rem}
+
+/* hero */
+.hero{padding:80px 0 72px;position:relative;overflow:hidden}
+@media(max-width:600px){.orbit{max-width:320px}}
+.hero::before{content:"";position:absolute;inset:0;background:
+  radial-gradient(600px 300px at 85% 10%,color-mix(in srgb,var(--accent) 16%,transparent),transparent 70%),
+  radial-gradient(500px 280px at 10% 90%,color-mix(in srgb,var(--brand2) 16%,transparent),transparent 70%);z-index:-1}
+.hero-grid{display:grid;gap:48px;align-items:center}
+@media(min-width:960px){.hero-grid{grid-template-columns:1.15fr .85fr}}
+h1{font-size:clamp(2.2rem,5.4vw,4rem);line-height:1.05;letter-spacing:-.035em;font-weight:800;margin:18px 0 22px}
+h1 em{font-style:normal}
+.lead{font-size:1.12rem;color:var(--muted);max-width:560px}
+.cta{display:flex;flex-wrap:wrap;gap:12px;margin-top:32px}
+.focus{display:flex;flex-wrap:wrap;gap:8px;margin-top:22px;max-width:580px}
+.focus span{font-size:.82rem;font-weight:700;padding:6px 12px;border-radius:999px;background:var(--card);border:1px solid var(--line)}
+.stats{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:48px;max-width:520px}
+.stats b{display:block;font-size:1.6rem;letter-spacing:-.02em}
+.stats span{font-size:.84rem;color:var(--muted)}
+
+.orbit{position:relative;aspect-ratio:1;max-width:420px;margin:0 auto;width:100%}
+.orbit .ring{position:absolute;border:1px dashed var(--line);border-radius:50%}
+.orbit .core{position:absolute;inset:30%;display:grid;place-items:center;filter:drop-shadow(0 12px 28px rgba(91,77,255,.3))}
+.orbit .core svg{width:100%}
+.chip{position:absolute;background:var(--card);border:1px solid var(--line);border-radius:14px;padding:10px 14px;font-weight:700;font-size:.85rem;box-shadow:var(--shadow);display:flex;align-items:center;gap:8px;white-space:nowrap;animation:float 6s ease-in-out infinite}
+.chip i{width:9px;height:9px;border-radius:50%;display:inline-block}
+@keyframes float{50%{transform:translateY(-8px)}}
+@media(prefers-reduced-motion:reduce){.chip{animation:none}}
+@media(max-width:480px){.chip{font-size:.75rem;padding:8px 10px}}
+
+/* sections */
+section{padding:88px 0}
+.head{max-width:680px;margin-bottom:48px}
+h2{font-size:clamp(1.8rem,3.6vw,2.6rem);letter-spacing:-.03em;line-height:1.12;margin-top:10px}
+.head p{color:var(--muted);margin-top:14px;font-size:1.05rem}
+
+.services{display:grid;gap:20px}
+@media(min-width:720px){.services{grid-template-columns:1fr 1fr}}
+@media(min-width:1040px){.services{grid-template-columns:repeat(3,1fr)}}
+.svc{background:var(--card);border:1px solid var(--line);border-radius:22px;padding:32px;box-shadow:var(--shadow);display:flex;flex-direction:column}
+.svc .ico{width:48px;height:48px;border-radius:14px;display:grid;place-items:center;margin-bottom:20px}
+.svc .ico svg{width:24px;height:24px}
+.svc h3{font-size:1.3rem;letter-spacing:-.02em;margin-bottom:10px}
+.svc p{color:var(--muted)}
+.svc ul{list-style:none;margin-top:18px;display:flex;flex-wrap:wrap;gap:8px}
+.svc li{font-size:.8rem;font-weight:600;padding:5px 11px;border-radius:999px;background:var(--bg);border:1px solid var(--line)}
+
+/* products */
+.alt{background:var(--bg2);border-block:1px solid var(--line)}
+.products{display:grid;gap:20px}
+@media(min-width:760px){.products{grid-template-columns:1fr 1fr}}
+@media(min-width:1040px){.products{grid-template-columns:repeat(3,1fr)}}
+.prod{display:flex;flex-direction:column}
+.prod .more{margin-top:auto;width:fit-content}
+.prod.si{background:var(--deep);color:var(--deepink);border:none}
+.prod.si p{color:#b3afd6;opacity:1}
+.prod{border-radius:22px;padding:36px;position:relative;overflow:hidden;border:1px solid var(--line)}
+.prod.ek{background:var(--grad);color:#fff;border:none}
+.prod.ax{background:var(--card)}
+.prod .tag{font-size:.75rem;font-weight:700;letter-spacing:.06em;text-transform:uppercase;opacity:.85}
+.prod h3{font-size:1.9rem;letter-spacing:-.03em;margin:8px 0 12px}
+.prod p{opacity:.92;max-width:460px}
+.prod.ax p{color:var(--muted);opacity:1}
+.mods{display:flex;flex-wrap:wrap;gap:8px;margin:22px 0 26px}
+.mods span{font-size:.8rem;font-weight:600;padding:5px 11px;border-radius:999px;background:rgba(255,255,255,.16);border:1px solid rgba(255,255,255,.26)}
+.prod.ax .mods span{background:var(--bg);border-color:var(--line)}
+.prod a.more{font-weight:700;display:inline-flex;gap:6px;align-items:center;border-bottom:2px solid currentColor;padding-bottom:2px}
+.circles{position:absolute;right:-30px;bottom:-30px;width:180px;opacity:.2}
+
+/* agritech */
+.agri{display:grid;gap:40px;align-items:center}
+@media(min-width:960px){.agri{grid-template-columns:1fr 1fr}}
+.agri-list{display:grid;gap:14px}
+.agri-item{display:flex;gap:16px;padding:18px 20px;background:var(--card);border:1px solid var(--line);border-radius:16px}
+.agri-item b{display:block;margin-bottom:2px}
+.agri-item span{color:var(--muted);font-size:.94rem}
+.agri-item .n{font-family:"JetBrains Mono",monospace;color:var(--brand);font-weight:500;padding-top:2px}
+.field{aspect-ratio:4/3;border-radius:24px;background:linear-gradient(180deg,#bfe3c9 0%,#7cc293 55%,#4f9a68 100%);position:relative;overflow:hidden;box-shadow:var(--shadow)}
+.field svg{position:absolute;inset:0;width:100%;height:100%}
+.readout{position:absolute;left:16px;bottom:16px;background:rgba(26,21,64,.9);color:#ecebfa;border-radius:14px;padding:12px 16px;font-family:"JetBrains Mono",monospace;font-size:.78rem;line-height:1.7}
+.readout b{color:#38d6ff;font-weight:500}
+
+/* supports */
+.supports{display:grid;gap:20px}
+@media(min-width:900px){.supports{grid-template-columns:repeat(3,1fr)}}
+.sup{background:var(--deep);color:var(--deepink);border-radius:22px;padding:32px;display:flex;flex-direction:column;gap:14px;position:relative;overflow:hidden}
+.sup::before{content:"";position:absolute;inset:0 0 auto 0;height:3px;background:var(--grad)}
+.sup .badge{width:fit-content;font-family:"JetBrains Mono",monospace;font-size:.72rem;letter-spacing:.08em;padding:5px 10px;border-radius:8px;background:rgba(56,214,255,.14);color:#38d6ff}
+.sup h3{font-size:1.35rem;letter-spacing:-.02em}
+.sup p{color:#b3afd6;font-size:.96rem}
+.sup ul{list-style:none;display:grid;gap:8px;margin-top:auto;padding-top:10px;border-top:1px solid rgba(255,255,255,.1)}
+.sup li{font-size:.9rem;display:flex;gap:8px}
+.sup li::before{content:"→";color:#e45cff}
+.note{margin-top:28px;padding:22px 26px;border-radius:18px;border:1px dashed var(--line);color:var(--muted);font-size:.96rem}
+.note b{color:var(--ink)}
+
+/* process */
+.steps{display:grid;gap:16px;counter-reset:s}
+@media(min-width:860px){.steps{grid-template-columns:repeat(4,1fr)}}
+.step{padding:26px;background:var(--card);border-radius:18px;border:1px solid var(--line);position:relative;overflow:hidden}
+.step::after{content:"";position:absolute;inset:0 0 auto 0;height:3px;background:var(--grad)}
+.step::before{counter-increment:s;content:"0" counter(s);font-family:"JetBrains Mono",monospace;color:var(--brand);font-size:.85rem}
+.step h4{font-size:1.08rem;margin:8px 0 6px}
+.step p{color:var(--muted);font-size:.93rem}
+
+/* contact */
+.contact{background:var(--deep);color:var(--deepink);border-radius:28px;padding:48px 28px;display:grid;gap:36px;position:relative;overflow:hidden}
+.contact::before{content:"";position:absolute;width:420px;height:420px;right:-160px;top:-160px;background:radial-gradient(circle,rgba(212,12,245,.28),transparent 65%)}
+.contact > *{position:relative}
+@media(min-width:900px){.contact{grid-template-columns:1fr 1fr;padding:64px}}
+.contact h2{color:#fff}
+.contact p{color:#b3afd6}
+.info{display:grid;gap:14px;margin-top:28px}
+.info div{display:flex;gap:12px;align-items:center}
+.info small{display:block;color:#8f8bb5;font-size:.78rem}
+form{display:grid;gap:12px}
+input,textarea,select{width:100%;font:inherit;padding:14px 16px;border-radius:12px;border:1px solid rgba(255,255,255,.14);background:rgba(255,255,255,.05);color:#fff}
+input::placeholder,textarea::placeholder{color:#8f8bb5}
+select option{color:#221c50}
+textarea{min-height:120px;resize:vertical}
+form .btn{background:var(--grad);color:#fff;justify-content:center;border:none;cursor:pointer}
+.formmsg{font-size:.9rem;color:#38d6ff;min-height:1.2em}
+
+footer{padding:40px 0;color:var(--muted);font-size:.88rem}
+.foot{display:flex;flex-wrap:wrap;gap:16px;justify-content:space-between;align-items:center;border-top:1px solid var(--line);padding-top:28px}
+.theme-toggle{background:none;border:1px solid var(--line);border-radius:999px;width:38px;height:38px;cursor:pointer;color:var(--ink);display:grid;place-items:center}
+</style>
+</head>
+<body>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <linearGradient id="og" x1="0" y1="1" x2="1" y2="0">
+      <stop offset="0" stop-color="#00c8f8"/><stop offset=".4" stop-color="#0560fa"/><stop offset=".7" stop-color="#7b4dff"/><stop offset="1" stop-color="#d40cf5"/>
+    </linearGradient>
+    <mask id="om" maskUnits="userSpaceOnUse" x="0" y="0" width="100" height="100">
+      <rect width="100" height="100" fill="#fff"/>
+      <g stroke="#000" stroke-width="3.2">
+        <path d="M50 24 72.5 11M72.5 37 95 50M72.5 63v26M50 76 27.5 89M27.5 63 5 50M27.5 37V11"/>
+      </g>
+    </mask>
+    <symbol id="hex" viewBox="0 0 100 100">
+      <path fill="url(#og)" fill-rule="evenodd" mask="url(#om)" stroke="url(#og)" stroke-width="3" stroke-linejoin="round" d="M50 5.5 88.5 27.7v44.6L50 94.5 11.5 72.3V27.7Z M50 24 27.5 37v26L50 76l22.5-13V37Z"/>
+    </symbol>
+  </defs>
+</svg>
+
+<header>
+  <div class="wrap nav">
+    <a href="#" class="logo" aria-label="Orellian Technology ana sayfa">
+      <svg viewBox="0 0 100 100" aria-hidden="true"><use href="#hex"/></svg>
+      <span><span class="wm">Orellian</span><span class="sub">technology</span></span>
+    </a>
+    <nav class="links">
+      <a href="#hizmetler">Hizmetler</a>
+      <a href="#urunler">Ürünler</a>
+      <a href="#tarim">Tarım Teknolojileri</a>
+      <a href="#destekler">Ar-Ge & Destekler</a>
+    </nav>
+    <div style="display:flex;gap:10px;align-items:center">
+      <button class="theme-toggle" id="themeBtn" aria-label="Tema değiştir">◐</button>
+      <a href="#iletisim" class="btn btn-primary">İletişim</a>
+    </div>
+  </div>
+</header>
+
+<main>
+<section class="hero">
+  <div class="wrap hero-grid">
+    <div>
+      <span class="slogan" style="color:var(--brand);font-size:1.05rem">Simple, Intelligent, Accessible</span>
+      <h1>Fikirden ürüne,<br><em class="gtext">Ar-Ge'den</em> sahaya teknoloji.</h1>
+      <p class="lead">Orellian; yazılım geliştiren, kendi SaaS ürünlerini üreten, e-ticaret operasyonları yürüten, tarım teknolojilerinde Ar-Ge yapan ve işletmelere BT donanımı ile tedarik zinciri desteği sağlayan bir teknoloji şirketidir.</p>
+      <div class="focus">
+        <span>Yazılım Geliştirme</span><span>SaaS</span><span>E-ticaret</span><span>Tarım Teknolojileri</span><span>Tedarik Zinciri Desteği</span><span>BT Donanım Tedariği</span>
+      </div>
+      <div class="cta">
+        <a href="#iletisim" class="btn btn-primary">Projenizi konuşalım →</a>
+        <a href="#hizmetler" class="btn btn-ghost">Neler yapıyoruz?</a>
+      </div>
+      <div class="stats">
+        <div><b>6</b><span>odak alanı</span></div>
+        <div><b>Web · Mobil</b><span>uçtan uca geliştirme</span></div>
+        <div><b>Ar-Ge</b><span>kamu destekli projeler</span></div>
+      </div>
+    </div>
+    <div class="orbit" aria-hidden="true">
+      <div class="ring" style="inset:0"></div>
+      <div class="ring" style="inset:16%"></div>
+      <div class="core">
+        <svg viewBox="0 0 100 100"><use href="#hex"/></svg>
+      </div>
+      <div class="chip" style="top:2%;left:24%"><i style="background:#0560fa"></i>Yazılım Geliştirme</div>
+      <div class="chip" style="top:22%;right:-4%;animation-delay:1s"><i style="background:#7b4dff"></i>SaaS</div>
+      <div class="chip" style="bottom:24%;right:-6%;animation-delay:2s"><i style="background:#d40cf5"></i>E-ticaret</div>
+      <div class="chip" style="bottom:2%;left:22%;animation-delay:3s"><i style="background:#00c8f8"></i>Tarım Teknolojileri</div>
+      <div class="chip" style="bottom:26%;left:-6%;animation-delay:4s"><i style="background:#5b4dff"></i>Tedarik Zinciri</div>
+      <div class="chip" style="top:22%;left:-4%;animation-delay:5s"><i style="background:#0bb4e8"></i>BT Donanım</div>
+    </div>
+  </div>
+</section>
+
+<section id="hizmetler">
+  <div class="wrap">
+    <div class="head">
+      <span class="mono">Hizmetler</span>
+      <h2>Altı alanda, tek çatı altında teknoloji</h2>
+      <p>Yazılımdan donanıma, ürün geliştirmeden tedarik ve satış kanalına kadar işin tamamını birlikte ele alıyoruz.</p>
+    </div>
+    <div class="services">
+      <article class="svc">
+        <div class="ico" style="background:color-mix(in srgb,#0560fa 14%,transparent);color:#0560fa"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="m8 9-4 3 4 3M16 9l4 3-4 3M13 6l-2 12"/></svg></div>
+        <h3>Özel Yazılım Geliştirme</h3>
+        <p>İşletmenize özel web uygulamaları, mobil uygulamalar ve kurumsal entegrasyonlar. İhtiyaç analizinden canlıya alıma ve bakıma kadar uçtan uca geliştirme.</p>
+        <ul><li>Web uygulamaları</li><li>iOS & Android</li><li>API & entegrasyon</li><li>Yapay zekâ</li><li>Gömülü sistemler</li><li>Siber güvenlik</li></ul>
+      </article>
+      <article class="svc">
+        <div class="ico" style="background:color-mix(in srgb,#7b4dff 14%,transparent);color:#7b4dff"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M7 18a4 4 0 0 1-.6-7.95A6 6 0 0 1 18 9a4.5 4.5 0 0 1-.5 9H7Z"/></svg></div>
+        <h3>SaaS Projeleri</h3>
+        <p>Abonelik modeliyle çalışan, çok kiracılı (multi-tenant), modüler bulut yazılımları geliştiriyor ve işletiyoruz. Kendi ürünümüz Ekipsis bu alandaki amiral gemimiz.</p>
+        <ul><li>Multi-tenant mimari</li><li>Modüler abonelik</li><li>Web panel + mobil</li><li>Ölçeklenebilir altyapı</li></ul>
+      </article>
+      <article class="svc">
+        <div class="ico" style="background:color-mix(in srgb,#d40cf5 14%,transparent);color:#c00ae0"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M3 4h2l2.4 11.2a2 2 0 0 0 2 1.6h7.7a2 2 0 0 0 2-1.5L21 8H6"/><circle cx="10" cy="20" r="1"/><circle cx="17" cy="20" r="1"/></svg></div>
+        <h3>E-ticaret</h3>
+        <p>Kendi markalarımızla çevrimiçi satış yapıyor, işletmeler için e-ticaret altyapısı, pazaryeri entegrasyonu ve dijital pazarlama otomasyonları kuruyoruz.</p>
+        <ul><li>Mağaza kurulumu</li><li>Pazaryeri entegrasyonu</li><li>Baskı-talep (POD)</li><li>Pazarlama otomasyonu</li></ul>
+      </article>
+      <article class="svc">
+        <div class="ico" style="background:color-mix(in srgb,#00c8f8 16%,transparent);color:#00a6d6"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M12 21V11M12 11c0-4 3-7 8-7 0 5-3 7-8 7ZM12 14c0-3-2.5-5-7-5 0 4 2.5 5 7 5Z"/></svg></div>
+        <h3>Tarım Teknolojileri</h3>
+        <p>IoT, akıllı ekipmanlar, yapay zekâ ve mobil uygulamaları birleştirerek üreticinin verimini artıran, su ve girdi kullanımını azaltan çözümler üzerinde Ar-Ge yürütüyoruz.</p>
+        <ul><li>IoT</li><li>Smart ekipmanlar</li><li>Yapay zekâ</li><li>Mobil uygulamalar</li></ul>
+      </article>
+      <article class="svc">
+        <div class="ico" style="background:color-mix(in srgb,#5b4dff 14%,transparent);color:#5b4dff"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 7h11v9H3zM14 10h4l3 3v3h-7"/><circle cx="7" cy="18" r="2"/><circle cx="17" cy="18" r="2"/></svg></div>
+        <h3>Tedarik Zinciri Desteği</h3>
+        <p>Birçok ürün grubunda işletmelerin tedarik süreçlerine destek veriyoruz: doğru tedarikçiyi bulma, satın alma, ithalat-ihracat ve teslimat koordinasyonu.</p>
+        <ul><li>Tedarikçi bulma</li><li>Satın alma</li><li>İthalat & ihracat</li><li>Lojistik koordinasyonu</li></ul>
+      </article>
+      <article class="svc">
+        <div class="ico" style="background:color-mix(in srgb,#0bb4e8 15%,transparent);color:#0a9ccc"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="12" rx="2"/><path d="M8 20h8M12 16v4"/></svg></div>
+        <h3>BT Donanım Tedariği</h3>
+        <p>Bilgisayar, sunucu, ağ ekipmanı, çevre birimleri ve elektronik bileşenlerde ihtiyaca uygun ürün seçimi, tedarik ve kurulum desteği sağlıyoruz.</p>
+        <ul><li>Bilgisayar & sunucu</li><li>Ağ ekipmanları</li><li>Çevre birimleri</li><li>Elektronik bileşen</li></ul>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section id="urunler" class="alt">
+  <div class="wrap">
+    <div class="head">
+      <span class="mono">Ürünlerimiz</span>
+      <h2>Kendi ürettiğimiz, kendi işlettiğimiz markalar</h2>
+      <p>Müşterilerimize sunduğumuz deneyimi önce kendi ürünlerimizde test ediyoruz.</p>
+    </div>
+    <div class="products">
+      <article class="prod ek">
+        <svg class="circles" viewBox="0 0 100 100" aria-hidden="true"><path fill="#fff" fill-rule="evenodd" d="M50 5.5 88.5 27.7v44.6L50 94.5 11.5 72.3V27.7Z M50 24 27.5 37v26L50 76l22.5-13V37Z"/></svg>
+        <span class="tag">SaaS · İşletme İşletim Sistemi</span>
+        <h3>Ekipsis</h3>
+        <p>Konum ve Wi-Fi tabanlı personel devam kontrol sistemi (PDKS) çekirdeği üzerine kurulu, modül modül satın alınabilen bulut tabanlı işletme yönetim platformu. Web paneli ve mobil uygulamasıyla tüm ekip tek yerde.</p>
+        <div class="mods"><span>PDKS</span><span>İK</span><span>Bordro</span><span>Sohbet</span><span>Satınalma</span><span>Saha Servis</span><span>Araç Yönetimi</span><span>Eğitim</span></div>
+        <a class="more" href="https://www.ekipsis.com" target="_blank" rel="noopener">ekipsis.com →</a>
+      </article>
+      <article class="prod si">
+        <span class="tag" style="color:#38d6ff">Ürün</span>
+        <h3>SiAxiom</h3>
+        <p>Orellian'ın yeni nesil ürünlerinden SiAxiom ile ilgili detaylar çok yakında bu sayfada.</p>
+        <div class="mods"><span>Yakında</span></div>
+        <a class="more" href="#iletisim">Bilgi alın →</a>
+      </article>
+      <article class="prod ax">
+        <span class="tag" style="color:var(--accent)">E-ticaret Markası · Tasarım Giyim</span>
+        <h3>Axiom &amp; Co.</h3>
+        <p>Yazılım ve teknoloji temalı özgün tasarım tişörtler. Baskı-talep (print-on-demand) modeliyle stoksuz üretim, Türkiye'nin her yerine gönderim ve otomatikleştirilmiş dijital pazarlama altyapısı.</p>
+        <div class="mods"><span>Özgün tasarım</span><span>Baskı-talep</span><span>Türkiye geneli kargo</span><span>Etsy</span></div>
+        <a class="more" href="https://axiomandco.etsy.com" target="_blank" rel="noopener">Mağazayı gör →</a>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section id="tarim">
+  <div class="wrap agri">
+    <div>
+      <span class="mono">Tarımsal Teknoloji Ar-Ge</span>
+      <h2>Toprağı ölçen, suyu tasarruf eden, verimi öngören tarım</h2>
+      <p style="color:var(--muted);margin:14px 0 28px;font-size:1.05rem">Elektronik donanım ve yazılım yetkinliğimizi tarımla buluşturuyoruz. Sahadan veri toplayan sensörlerden, bu veriyi karara dönüştüren yapay zekâ modellerine kadar tüm katmanları kendimiz geliştiriyoruz.</p>
+      <div class="agri-list">
+        <div class="agri-item"><span class="n">01</span><div><b>IoT</b><span>Toprak nemi, sıcaklık, iklim ve besin değerlerini ölçen, düşük enerjili kablosuz sensör ağları.</span></div></div>
+        <div class="agri-item"><span class="n">02</span><div><b>Smart ekipmanlar</b><span>Gerçek zamanlı veriye göre çalışan akıllı sulama, sera otomasyonu ve saha kontrol cihazları.</span></div></div>
+        <div class="agri-item"><span class="n">03</span><div><b>Yapay zekâ</b><span>Verim tahmini, hastalık ve zararlı erken uyarısı, veriye dayalı karar destek modelleri.</span></div></div>
+        <div class="agri-item"><span class="n">04</span><div><b>Mobil uygulamalar</b><span>Tarlanın durumunu cepten izleyen, uyarı alan ve uzaktan müdahale eden üretici uygulamaları.</span></div></div>
+      </div>
+    </div>
+    <div class="field" aria-hidden="true">
+      <svg viewBox="0 0 400 300" preserveAspectRatio="none">
+        <g stroke="#2f6e47" stroke-width="2" opacity=".55">
+          <path d="M-20 300 L120 120"/><path d="M60 300 L160 120"/><path d="M140 300 L200 120"/><path d="M220 300 L240 120"/><path d="M300 300 L280 120"/><path d="M380 300 L320 120"/><path d="M460 300 L360 120"/>
+        </g>
+        <rect x="0" y="0" width="400" height="120" fill="#e3effb"/>
+        <circle cx="330" cy="50" r="22" fill="#fcd34d"/>
+        <g>
+          <line x1="150" y1="200" x2="150" y2="160" stroke="#221c50" stroke-width="3"/><rect x="138" y="148" width="24" height="16" rx="3" fill="#221c50"/><circle cx="150" cy="156" r="3" fill="#38d6ff"/>
+          <line x1="270" y1="235" x2="270" y2="190" stroke="#221c50" stroke-width="3"/><rect x="258" y="178" width="24" height="16" rx="3" fill="#221c50"/><circle cx="270" cy="186" r="3" fill="#e45cff"/>
+          <path d="M150 140 Q 210 90 270 170" stroke="#5b4dff" stroke-width="1.5" stroke-dasharray="4 4" fill="none" opacity=".7"/>
+        </g>
+      </svg>
+      <div class="readout">SENSÖR #07 · PARSEL B<br>Toprak nemi <b>%31</b><br>Sıcaklık <b>22.4°C</b><br>Sulama önerisi <b>18 dk</b></div>
+    </div>
+  </div>
+</section>
+
+<section id="destekler" class="alt">
+  <div class="wrap">
+    <div class="head">
+      <span class="mono">Ar-Ge & Kamu Destekleri</span>
+      <h2>Ar-Ge projelerimizi kamu destek programlarıyla büyütüyoruz</h2>
+      <p>Yenilikçi projelerimizi KOSGEB, TÜBİTAK ve T.C. Sanayi ve Teknoloji Bakanlığı destek mekanizmalarıyla planlıyor, yürütüyor ve raporluyoruz. Proje ortaklarımıza da bu süreçlerde teknik ortak olarak eşlik ediyoruz.</p>
+    </div>
+    <div class="supports">
+      <article class="sup">
+        <span class="badge">KOSGEB</span>
+        <h3>KOBİ'ler için Ar-Ge ve inovasyon</h3>
+        <p>Ürün geliştirme, inovasyon ve dijital dönüşüm projelerimizi KOSGEB destek programları çerçevesinde kurguluyoruz.</p>
+        <ul><li>Ar-Ge, Ür-Ge ve İnovasyon destekleri</li><li>Dijital dönüşüm projeleri</li><li>Girişimcilik destekleri</li></ul>
+      </article>
+      <article class="sup">
+        <span class="badge">TÜBİTAK</span>
+        <h3>Sanayi Ar-Ge projeleri</h3>
+        <p>Teknik derinliği yüksek yazılım, donanım ve tarım teknolojisi projelerimizi TÜBİTAK TEYDEB programlarına uygun olarak yürütüyoruz.</p>
+        <ul><li>1501 Sanayi Ar-Ge Projeleri</li><li>1507 KOBİ Ar-Ge Başlangıç</li><li>Üniversite–sanayi iş birlikleri</li></ul>
+      </article>
+      <article class="sup">
+        <span class="badge">SANAYİ VE TEKNOLOJİ BAKANLIĞI</span>
+        <h3>Teknoloji ve yatırım teşvikleri</h3>
+        <p>Yerli teknoloji üretimini hedefleyen projelerimizde Bakanlığın Ar-Ge, teknoloji geliştirme ve yatırım teşvik mekanizmalarından yararlanıyoruz.</p>
+        <ul><li>Ar-Ge ve tasarım teşvikleri</li><li>Teknoloji geliştirme bölgesi avantajları</li><li>Yerli üretim ve yatırım teşvikleri</li></ul>
+      </article>
+    </div>
+    <div class="note"><b>Birlikte proje geliştirelim.</b> Kamu destekli bir Ar-Ge projesi için yazılım, donanım veya IoT tarafında teknik ortak arıyorsanız; fikir aşamasından proje yazımına, geliştirmeden raporlamaya kadar yanınızdayız.</div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="head">
+      <span class="mono">Çalışma Şeklimiz</span>
+      <h2>Basit, akıllı, erişilebilir süreç</h2>
+    </div>
+    <div class="steps">
+      <div class="step"><h4>Keşif</h4><p>İhtiyacı, hedefi ve kısıtları birlikte netleştiriyoruz.</p></div>
+      <div class="step"><h4>Tasarım</h4><p>Mimari, arayüz ve gerekiyorsa donanım tasarımını çıkarıyoruz.</p></div>
+      <div class="step"><h4>Geliştirme</h4><p>Kısa döngülerle geliştiriyor, her aşamada sonuç gösteriyoruz.</p></div>
+      <div class="step"><h4>Canlı & Destek</h4><p>Yayına alıyor, izliyor ve sürekli iyileştiriyoruz.</p></div>
+    </div>
+  </div>
+</section>
+
+<section id="iletisim" style="padding-top:0">
+  <div class="wrap">
+    <div class="contact">
+      <div>
+        <span class="mono" style="color:#38d6ff">İletişim</span>
+        <h2>Bir fikriniz mi var? Konuşalım.</h2>
+        <p style="margin-top:14px">Yazılım projesi, SaaS iş birliği, e-ticaret ya da Ar-Ge ortaklığı — bize yazın, en kısa sürede dönüş yapalım.</p>
+        <div class="info">
+          <div>✉️<span><small>E-posta</small><a href="mailto:info@orellian.com">info@orellian.com</a></span></div>
+          <div>🌐<span><small>Web</small>www.orellian.com</span></div>
+          <div>🏢<span><small>Unvan</small>Orellian Yazılım ve Bilgi Teknolojileri Üretim Pazarlama İthalat İhracat Sanayi ve Ticaret Ltd. Şti.</span></div>
+          <div>📍<span><small>Adres</small>İstasyon Mah. Sungurbey Cad. No: 51 Saadet Apt. Z01, Merkez / Kırklareli</span></div>
+          <div>🧾<span><small>Vergi · MERSİS</small>Kırklareli V.D. 6450856623 · MERSİS 0645085662300001</span></div>
+        </div>
+      </div>
+      <form id="cf">
+        <input name="ad" placeholder="Ad Soyad" required>
+        <input name="eposta" type="email" placeholder="E-posta" required>
+        <select name="konu" aria-label="Konu">
+          <option>Özel yazılım geliştirme</option>
+          <option>SaaS / Ekipsis</option>
+          <option>E-ticaret</option>
+          <option>Tarım teknolojileri</option>
+          <option>Tedarik zinciri desteği</option>
+          <option>BT donanım tedariği</option>
+          <option>SiAxiom</option>
+          <option>KOSGEB / TÜBİTAK / Bakanlık destekli proje</option>
+          <option>Diğer</option>
+        </select>
+        <textarea name="mesaj" placeholder="Kısaca projenizden bahsedin" required></textarea>
+        <button class="btn" type="submit">Gönder →</button>
+        <div class="formmsg" id="fm"></div>
+      </form>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer>
+  <div class="wrap foot">
+    <span>© <span id="yr"></span> Orellian Yazılım ve Bilgi Teknolojileri Ltd. Şti.</span>
+    <span class="slogan" style="color:var(--brand)">Simple, Intelligent, Accessible</span>
+  </div>
+</footer>
+
+<script>
+document.getElementById('yr').textContent = new Date().getFullYear();
+const root = document.documentElement, btn = document.getElementById('themeBtn');
+btn.addEventListener('click', () => {
+  const dark = root.dataset.theme ? root.dataset.theme === 'dark' : matchMedia('(prefers-color-scheme: dark)').matches;
+  root.dataset.theme = dark ? 'light' : 'dark';
+});
+// Form: sunucu tarafı eklenene kadar e-posta istemcisini açar
+document.getElementById('cf').addEventListener('submit', e => {
+  e.preventDefault();
+  const f = new FormData(e.target);
+  const body = `Ad Soyad: ${f.get('ad')}\nE-posta: ${f.get('eposta')}\n\n${f.get('mesaj')}`;
+  location.href = `mailto:info@orellian.com?subject=${encodeURIComponent('Web sitesi: ' + f.get('konu'))}&body=${encodeURIComponent(body)}`;
+  document.getElementById('fm').textContent = 'E-posta uygulamanız açılıyor…';
+});
+</script>
+</body>
+</html>
