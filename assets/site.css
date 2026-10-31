@@ -263,3 +263,5 @@ form.f{display:grid;gap:16px;background:var(--panel);border:1px solid var(--line
 @media(max-width:760px){.section{padding:64px 0}.section-tight{padding:44px 0}.page-hero{padding:48px 0 40px}}
 .dd-panel.wide{min-width:640px;grid-template-columns:1fr 1fr;gap:2px}
 .dd[data-open="true"] .dd-panel.wide{display:grid}
+
+.foot-slogan{font-family:var(--display);font-weight:500;font-size:1.05rem;margin:4px 0 14px}
