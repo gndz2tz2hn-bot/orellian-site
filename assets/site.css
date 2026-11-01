@@ -91,7 +91,7 @@ h3{font-size:1.25rem}
 .crumbs a{color:var(--soft);text-decoration:none}
 .crumbs a:hover{color:var(--text)}
 .crumbs li+li::before{content:"/";margin-right:8px;color:var(--line)}
-.page-hero h1{font-size:clamp(2.1rem,4.6vw,3.5rem);max-width:20ch}
+.page-hero h1{font-size:clamp(2rem,4.4vw,3.3rem);max-width:24ch}
 .page-hero .lead{margin-top:20px}
 .page-hero .hero-actions{margin-top:28px}
 .tagline{color:var(--cyan);font-weight:600;font-size:.98rem;margin-bottom:14px;display:block}
