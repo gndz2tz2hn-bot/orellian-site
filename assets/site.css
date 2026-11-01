@@ -265,3 +265,7 @@ form.f{display:grid;gap:16px;background:var(--panel);border:1px solid var(--line
 .dd[data-open="true"] .dd-panel.wide{display:grid}
 
 .foot-slogan{font-family:var(--display);font-weight:500;font-size:1.05rem;margin:4px 0 14px}
+
+.partner-badge{display:inline-flex;align-items:center;gap:14px;border:1px solid var(--line);border-radius:999px;padding:10px 20px;color:var(--text);font-weight:600;font-size:.95rem}
+.partner-badge img{height:24px;width:auto}
+.partner-badge span{border-left:1px solid var(--line);padding-left:14px}
